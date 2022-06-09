@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-align: center;
+            font-size: 30px;
+        }
+        button{
+            width: 100px;
+            display: none;
+        }
+        .display{
+            display: flex !important
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="login">
+         <h1>First, log in to spotify</h1>
+         <a id="login" href='https://accounts.spotify.com/authorize?client_id=171ed7b1407541a48319f763ab124e98&amp;redirect_uri=http://localhost:5500/&amp;scope=user-top-read%20user-read-currently-playing%20user-read-playback-state%20user-modify-playback-state%20playlist-modify-public%20playlist-modify-private&amp;response_type=token&amp;show_dialog=true'>Log in</a>
+        </div><br>
+        <button id="aperta">aperta aqui man</button>
+    </div>
+     <script src="./script.js"></script>
+</body>
+</html>
