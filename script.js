@@ -24,7 +24,16 @@ function addPlaylist(result, repet){
             description: "feijuuca",
             public: true
         })})
-        .then(r => console.log(r))  
+        .then(r => r.json()
+        .then(playlist => 
+            fetch(`https://api.spotify.com/v1/artists/3Nrfpe0tUJi4K4DXYWgMUX/top-tracks?market=BR`, {method: 'GET', headers})
+            .then(pls => pls.json()
+            .then(tracks => {
+                tracks.tracks.forEach(track => {
+                    fetch(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks?uris=${track.uri}`, {method: 'POST', headers})
+                });
+            }))
+        ))  
     }
 }
 
@@ -43,7 +52,7 @@ document.getElementById('aperta').addEventListener('click', () => {
         response => {
         response.json().
         then(result => 
-            addPlaylist(result, 20)
+            addPlaylist(result, 10)
         )   
     }) 
 })
